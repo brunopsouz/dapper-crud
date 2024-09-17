@@ -8,5 +8,7 @@ namespace OrderManagement.Application.Repositories
         Task<IEnumerable<ProductsDTO>> GetAllProducts();
         Task<ProductsDTO> GetProductsById(long Id);
         void InsertProducts(ProductsModel products);
+        void DeleteProducts(long id);
+
     }
 }

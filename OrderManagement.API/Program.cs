@@ -27,5 +27,6 @@ app.UseHttpsRedirection();
 app.MapGet("/GetAllProducts/", ([FromServices]IProductsRepository repo) => repo.GetAllProducts());
 app.MapGet("/GetProductsById/{id}", ([FromServices] IProductsRepository repo, int id) => repo.GetProductsById(id));
 app.MapPost("/InsertProducts/", ([FromServices] IProductsRepository repo, [FromBody] ProductsModel products) => repo.InsertProducts(products));
+app.MapDelete("/DeleteProducts/", ([FromServices] IProductsRepository repo, int id) => repo.DeleteProducts(id));
 
 app.Run();

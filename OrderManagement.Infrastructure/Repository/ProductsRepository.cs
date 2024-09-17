@@ -1,18 +1,16 @@
-﻿using OrderManagement.Application.DTOs;
+﻿using Dapper;
+using OrderManagement.Application.DTOs;
 using OrderManagement.Application.Repositories;
 using OrderManagement.Domain.Entities;
 using OrderManagement.Infrastructure.Factory;
-using System.Data;
-using Dapper;
 using OrderManagement.Infrastructure.Queries;
-using System.Xml.Linq;
+using System.Data;
 
 namespace OrderManagement.Infrastructure.Repository
 {
     public class ProductsRepository(SqlFactory factory) : IProductsRepository
     {
         private readonly IDbConnection _connection = factory.CreateConnection();
-
 
         public async Task<IEnumerable<ProductsDTO>> GetAllProducts()
         {
@@ -33,6 +31,13 @@ namespace OrderManagement.Infrastructure.Repository
             var query = ProductsQueries.InserProducts(products);
             await _connection.ExecuteAsync(query.Query, query.Parameters);
             
+        }
+
+        public async void DeleteProducts(long id)
+        {
+            var query = ProductsQueries.DeleteProducts(id);
+            await _connection.ExecuteAsync(query.Query, query.Parameters);
+
         }
     }
 }

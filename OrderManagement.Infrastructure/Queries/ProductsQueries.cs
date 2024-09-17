@@ -52,7 +52,7 @@ namespace OrderManagement.Infrastructure.Queries
             var table = Map.ContextMapping.GetProductsTable();
 
             var query = $@"
-            INSERT INTO Products 
+            INSERT INTO {table} 
             (
             	ProductName, 
             	Description, 
@@ -78,6 +78,25 @@ namespace OrderManagement.Infrastructure.Queries
                 products.StockQuantity,
                 products.CreatedAt
 
+            };
+
+            return new QueryModel(query, parameters);
+
+        }
+
+        public static QueryModel DeleteProducts(long Id)
+        {
+            var table = Map.ContextMapping.GetProductsTable();
+
+            var query = $@"
+
+            DELETE FROM {table} WHERE ProductID = @ProductID
+            
+            ";
+
+            var parameters = new
+            {
+                ProductID = Id
             };
 
             return new QueryModel(query, parameters);

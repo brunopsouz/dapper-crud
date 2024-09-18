@@ -39,6 +39,14 @@ namespace OrderManagement.Infrastructure.Repository
             await _connection.ExecuteAsync(query.Query, query.Parameters);
 
         }
+
+        public void UpdateProducts(ProductsDTO products)
+        {
+            var query = ProductsQueries.UpdateProducts(products);
+
+            _connection.ExecuteScalar<ProductsDTO>(query.Query, query.Parameters);
+
+        }
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using OrderManagement.Domain.Entities;
+﻿using OrderManagement.Application.DTOs;
+using OrderManagement.Domain.Entities;
 
 namespace OrderManagement.Infrastructure.Queries
 {
@@ -103,6 +104,37 @@ namespace OrderManagement.Infrastructure.Queries
 
         }
 
+        public static QueryModel UpdateProducts(ProductsDTO products)
+        {
+            var table = Map.ContextMapping.GetProductsTable();
+
+            var query = $@"
+        
+            UPDATE {table} 
+            SET ProductName = @ProductName, 
+            	Description = @Description, 
+            	Price = @Price, 
+            	StockQuantity = @StockQuantity, 
+            	CreatedAt = @CreatedAt
+            WHERE 
+                ProductID = @ProductID
+            
+            ";
+
+            var parameters = new
+            {
+                products.ProductName,
+                products.Description,
+                products.Price,
+                products.StockQuantity,
+                products.CreatedAt,
+                products.ProductId
+
+            };
+
+            return new QueryModel(query, parameters);
+
+        }
 
     }
 }

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using OrderManagement.Application.DTOs;
 using OrderManagement.Application.Repositories;
 using OrderManagement.Domain.Entities;
 using OrderManagement.Infrastructure.Factory;
@@ -28,5 +29,6 @@ app.MapGet("/GetAllProducts/", ([FromServices]IProductsRepository repo) => repo.
 app.MapGet("/GetProductsById/{id}", ([FromServices] IProductsRepository repo, int id) => repo.GetProductsById(id));
 app.MapPost("/InsertProducts/", ([FromServices] IProductsRepository repo, [FromBody] ProductsModel products) => repo.InsertProducts(products));
 app.MapDelete("/DeleteProducts/", ([FromServices] IProductsRepository repo, int id) => repo.DeleteProducts(id));
+app.MapPut("/UpdateProducts/", ([FromServices] IProductsRepository repo, [FromBody] ProductsDTO products) => repo.UpdateProducts(products));
 
 app.Run();

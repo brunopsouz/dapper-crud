@@ -9,6 +9,7 @@ namespace OrderManagement.Application.Repositories
         Task<ProductsDTO> GetProductsById(long Id);
         void InsertProducts(ProductsModel products);
         void DeleteProducts(long id);
+        void UpdateProducts(ProductsDTO products);
 
     }
 }

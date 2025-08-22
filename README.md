@@ -11,10 +11,10 @@ A aplicação conecta-se a um banco de dados **SQL Server**, executando comandos
 ### Backend
 
 - **.NET 8.0**
-- **Dapper 2.1.35** — micro ORM leve e rápido
-- **SQL Server** — persistência de dados relacional
-- **Microsoft.Data.SqlClient 5.2.2** — driver ADO.NET moderno
-- **Microsoft.Extensions.Configuration 8.0.0** — gerenciamento de configuração (ex: connection string)
+- **Dapper 2.1.35** 
+- **SQL Server**
+- **Microsoft.Data.SqlClient 5.2.2** 
+- **Microsoft.Extensions.Configuration 8.0.0**
 
 ---
 

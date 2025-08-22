@@ -6,19 +6,19 @@ A aplicação conecta-se a um banco de dados **SQL Server**, executando comandos
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-### ⚙️ Backend
+### Backend
 
-- ✅ **.NET 8.0**
-- ⚡ **Dapper 2.1.35** — micro ORM leve e rápido
-- 🗄️ **SQL Server** — persistência de dados relacional
-- 🔌 **Microsoft.Data.SqlClient 5.2.2** — driver ADO.NET moderno
-- ⚙️ **Microsoft.Extensions.Configuration 8.0.0** — gerenciamento de configuração (ex: connection string)
+- **.NET 8.0**
+- **Dapper 2.1.35** — micro ORM leve e rápido
+- **SQL Server** — persistência de dados relacional
+- **Microsoft.Data.SqlClient 5.2.2** — driver ADO.NET moderno
+- **Microsoft.Extensions.Configuration 8.0.0** — gerenciamento de configuração (ex: connection string)
 
 ---
 
-## 📚 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 - Cadastro de pedidos
 - Atualização e remoção de pedidos
@@ -28,7 +28,7 @@ A aplicação conecta-se a um banco de dados **SQL Server**, executando comandos
 
 ---
 
-## 🧱 Arquitetura
+## Arquitetura
 
 A solução é separada em quatro projetos, seguindo princípios de separação de responsabilidades:
 - /OrderManagement.sln
@@ -54,7 +54,7 @@ dotnet run --project OrderManagement.API
 
 ---
 
-### 🎯 Objetivo do Projeto
+### Objetivo do Projeto
 - Explorar e aplicar o uso de Dapper em um projeto real
 - Aplicar princípios de arquitetura limpa com múltiplas camadas
 - Desenvolver um backend performático com controle total sobre SQL
